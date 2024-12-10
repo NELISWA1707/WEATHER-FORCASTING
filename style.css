@@ -9,3 +9,24 @@ body {
   border-radius: 20px;
   box-shadow: 4px 4px 4px rgb(22, 22, 24);
 }
+#search-input {
+  background-color: #f9f7fe;
+  border: none;
+  width: 75%;
+  padding: 20px;
+  border-radius: 13px;
+}
+#search-button {
+  background-color: #885df1;
+  border: none;
+  padding: 15px;
+  border-radius: 13px;
+  color: white;
+  margin: 10px;
+  width: 20%;
+  font-size: 16px;
+}
+footer {
+  padding: 30px 0 0 0;
+  text-align: center;
+}
