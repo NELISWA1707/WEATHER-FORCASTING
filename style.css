@@ -4,7 +4,7 @@ body {
 .weather-app {
   background-color: white;
   max-width: 600px;
-  margin: 0 auto;
+  margin: 45px auto;
   padding: 30px;
   border-radius: 20px;
   box-shadow: 4px 4px 4px rgb(22, 22, 24);
