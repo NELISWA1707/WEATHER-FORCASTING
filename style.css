@@ -30,3 +30,32 @@ footer {
   padding: 30px 0 0 0;
   text-align: center;
 }
+.weather-data {
+  display: flex;
+  justify-content: space-between;
+}
+.humidity-percent {
+  color: #f65282;
+}
+.wind-speed {
+  color: #f65282;
+}
+.weather-app-rap {
+  display: flex;
+}
+.weather-temperature {
+  font-size: 80px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.icon {
+  font-size: 45px;
+  margin-top: 15px;
+}
+.temperature-units {
+  margin-top: 30px;
+  font-size: 35px;
+}
+.city {
+  font-weight: bold;
+}
