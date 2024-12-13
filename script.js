@@ -38,6 +38,7 @@ function formatDate(date) {
   let day = days[date.getDay()];
   return `${day}, ${hours}:${minutes}`;
 }
+
 function searchCity(city) {
   let apiKey = "69486f3703b7o03b7a5448ae33t4c4f7";
   let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
@@ -52,3 +53,26 @@ function search(event) {
 }
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
+
+function displayForecast() {
+  let forecast = document.querySelector(".weather-forecast");
+  let days = ["Tues", "Wed", "Thur", "Fri"];
+  let forecastHtml = "";
+
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="weather-forecast-day">
+        <div class="weather-forecast-date">${day}</div>
+        <div class="weather-forecast-icon">⛅</div>
+        <div class="temperatures">
+          <div class="temperature1">15&deg;</div>
+          <div class="temperature2">9&deg;</div>
+        </div>
+      </div>`;
+  });
+
+  forecast.innerHTML = forecastHtml;
+}
+
+displayForecast();
