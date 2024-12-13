@@ -5,6 +5,8 @@ function weatherData(response) {
   temperatureElement.innerHTML = temperature;
   let cityElement = document.querySelector("#city-element");
   cityElement.innerHTML = response.data.city;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.condition.description;
 }
 
 function searchCity(city) {
