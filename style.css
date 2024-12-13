@@ -76,3 +76,8 @@ footer {
 .temperature1 {
   padding: 0 10px;
 }
+.weather-focast {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
