@@ -14,6 +14,14 @@ function weatherData(response) {
   let timeElement = document.querySelector("#time");
   let date = new Date(response.data.time * 1000);
   timeElement.innerHTML = formatDate(date);
+  let iconImage = document.querySelector("#weather-app-icon");
+  iconImage.innerHTML = `<img src="${response.data.condition.icon_url}" class="icon"/>`;
+  document.body.className = response.data.condition.icon;
+  let body = document.querySelector("body");
+  let icon = response.data.condition.icon;
+  if (icon.includes("night")) {
+    body.classList.add("dark");
+  }
 }
 function formatDate(date) {
   let hours = date.getHours();
