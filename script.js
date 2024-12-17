@@ -21,9 +21,8 @@ function weatherData(response) {
   let icon = response.data.condition.icon;
   if (icon.includes("night")) {
     body.classList.add("dark");
-
-    getForecast(response.data.city);
   }
+  getForecast(response.data.city);
 }
 function formatDate(date) {
   let hours = date.getHours();
@@ -65,18 +64,24 @@ function getForecast(city) {
 function displayForecast(response) {
   console.log(response.data);
   let forecast = document.querySelector(".weather-forecast");
-  let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
+
   let forecastHtml = "";
 
-  days.forEach(function (day) {
+  response.data.daily.forEach(function (day) {
     forecastHtml =
       forecastHtml +
       `<div class="weather-forecast-day">
-        <div class="weather-forecast-date">${day}</div>
-        <div class="weather-forecast-icon">⛅</div>
+        <div class="weather-forecast-date">Tues</div>
+        <div class="weather-forecast-icon"><img src="${
+          day.condition.icon_url
+        }"/> </div>
         <div class="temperatures">
-          <div class="temperature1">15&deg;</div>
-          <div class="temperature2">9&deg;</div>
+          <div class="temperature1">${Math.round(
+            day.temperature.maximum
+          )}&deg;</div>
+          <div class="temperature2">${Math.round(
+            day.temperature.minimum
+          )}&deg;</div>
         </div>
       </div>`;
   });
@@ -84,4 +89,4 @@ function displayForecast(response) {
   forecast.innerHTML = forecastHtml;
 }
 searchCity("Paris");
-displayForecast();
+displayForecast("Paris");
