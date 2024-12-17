@@ -21,6 +21,8 @@ function weatherData(response) {
   let icon = response.data.condition.icon;
   if (icon.includes("night")) {
     body.classList.add("dark");
+
+    Getforecast(response.data.city);
   }
 }
 function formatDate(date) {
@@ -54,7 +56,13 @@ function search(event) {
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", search);
 
-function displayForecast() {
+function Getforecast(city) {
+  let apiKey = "69486f3703b7o03b7a5448ae33t4c4f7";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
   let forecast = document.querySelector(".weather-forecast");
   let days = ["Tues", "Wed", "Thur", "Fri", "Sat"];
   let forecastHtml = "";
@@ -74,5 +82,4 @@ function displayForecast() {
 
   forecast.innerHTML = forecastHtml;
 }
-
-displayForecast();
+searchCity("Paris");
